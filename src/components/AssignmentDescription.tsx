@@ -1,7 +1,8 @@
-import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
-const AssignmentDescription = () => {
+
+const AssignmentDescription: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div

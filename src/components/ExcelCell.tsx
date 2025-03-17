@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { StyledCell, StyledInput } from './ExcelStyles';
 import { getCellCoord, CellData } from '../utils/excelUtils';
 import { GRID_CONSTANTS } from '../utils/excelUtils';
@@ -51,7 +51,6 @@ const ExcelCell: React.FC<CellProps> = ({ columnIndex, rowIndex, style, data }) 
     }
   };
 
-  // Reset local value when cell data changes from external updates
   useEffect(() => {
     if (!isEditing) {
       setLocalValue(cellData.formula || cellData.value);
@@ -65,7 +64,6 @@ const ExcelCell: React.FC<CellProps> = ({ columnIndex, rowIndex, style, data }) 
     }
   }, [cellData, coord]);
 
-  // Apply exact size to match header size
   const cellStyle = {
     ...style,
     width: GRID_CONSTANTS.COLUMN_WIDTH,

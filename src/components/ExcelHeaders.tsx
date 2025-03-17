@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeaderCell, CornerCell } from './ExcelStyles';
 import { getColumnHeader, GRID_CONSTANTS } from '../utils/excelUtils';
 
@@ -20,7 +19,7 @@ export const ColumnHeaders: React.FC<HeadersProps> = ({ scrollLeft }) => {
       overflow: 'hidden',
       boxSizing: 'border-box'
     }}>
-      {Array.from({ length: Math.min(1000, GRID_CONSTANTS.GRID_SIZE) }, (_, i) => (
+      {Array.from({ length: Math.min(10_000, GRID_CONSTANTS.GRID_SIZE) }, (_, i) => (
         <HeaderCell
           key={`col-${i}`}
           style={{
@@ -49,7 +48,7 @@ export const RowHeaders: React.FC<HeadersProps> = ({ scrollTop }) => {
       overflow: 'hidden',
       boxSizing: 'border-box'
     }}>
-      {Array.from({ length: Math.min(10000, GRID_CONSTANTS.GRID_SIZE) }, (_, i) => (
+      {Array.from({ length: Math.min(10_000, GRID_CONSTANTS.GRID_SIZE) }, (_, i) => (
         <HeaderCell
           key={`row-${i}`}
           style={{
